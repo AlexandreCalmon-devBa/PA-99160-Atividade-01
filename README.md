@@ -1,23 +1,11 @@
-# GIT
-
-## COMANDOS BÁSICOS
-
-Trazendo possiveis mudanças no GitHub:
-```
-git pull
-```
-
-Adicionar arquivos para commit:
-```
-git add .
-```
-
-Criar ponto de versionamento:
-```
-git commit -m "Comandos básicos de git."
-```
-
-Enviar alterações para GitHub:
-```
-git push
-```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
