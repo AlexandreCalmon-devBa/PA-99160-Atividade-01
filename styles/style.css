@@ -1,0 +1,73 @@
+/* Reset padrão */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* Imagem de fundo ajustada */
+    background-image: url("/assets/A-serene-landscape-with-Pokemon-in-their-natural-habitat-perfect-as-a-HD-wallpaper.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    
+    /* Mágica do Alinhamento Central */
+    display: flex;
+    flex-direction: column; /* Coloca os itens um embaixo do outro */
+    align-items: center;    /* Centraliza na horizontal */
+    justify-content: center; /* Centraliza na vertical (se a tela for alta) */
+    min-height: 100vh;      /* Garante que o corpo tenha o tamanho da tela toda */
+    
+    font-family: 'Arial', sans-serif;
+    padding: 20px;
+}
+
+/* Estilo da Imagem */
+img {
+    display: block;
+    max-width: 400px; /* 10% é muito pouco, 250px fica ideal */
+    height: auto;
+    margin: -100px auto 20px auto; /* Reforço da centralização */
+    filter: drop-shadow(5px 5px 15px rgba(0,0,0,0.5)); /* Dá profundidade */
+}
+
+/* Estilo do Texto para não sumir no fundo */
+p {
+    color: white;
+    text-align: center;
+    max-width: 600px;
+    background-color: rgba(0, 0, 0, 0.6); /* Fundo escuro atrás do texto */
+    padding: 40px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+ul {
+    color: white;
+    text-align: center;
+    max-width: 600px;
+    background-color: rgba(0, 0, 0, 0.6); /* Fundo escuro atrás do texto */
+    padding: 40px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+a {
+    display: inline-block; /* Importante para a margem funcionar direito */
+    margin-top: 20px;      /* Aumente esse valor (80px, 100px) até ficar onde você quer */
+    
+    /* Estilo visual para não ficar um link feio e azul */
+    color: #FFDE00; 
+    text-decoration: none;
+    background-color: #3B4CCA;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+a:hover {
+    background-color: #CC0000; /* Muda para vermelho Pokémon ao passar o mouse */
+    transform: scale(1.1);      /* Dá um leve zoom */
+}
