@@ -40,7 +40,7 @@ h1 {
     align-items: start; 
 }
 
-/* --- Cartão Completo (Imagem + Golpes) --- */
+/* --- Cartão Completo --- */
 .full-card {
     background-color: #fff;
     border-radius: 12px;
@@ -66,7 +66,7 @@ h1 {
     margin-bottom: 15px; 
 }
 
-/* --- Área dos Golpes --- */
+/* --- Área dos Golpes (Com Ícones e Interatividade) --- */
 .moves-info {
     width: 100%; 
     text-align: left; 
@@ -77,24 +77,70 @@ h1 {
 .moves-info h3 {
     margin-top: 0;
     margin-bottom: 10px;
-    color: #d32f2f; 
-    font-size: 1.2rem;
+    color: #333; /* Cor mais neutra para o título */
+    font-size: 1.3rem;
     text-align: center; 
+    font-weight: 600;
 }
 
 .moves-info ul {
-    padding-left: 25px; 
-    margin-bottom: 0;
-    margin-top: 0;
+    padding-left: 0; /* Remove o padding padrão da lista */
+    list-style: none; /* Remove as bolinhas padrão da lista */
+    margin: 0;
 }
 
+/* Estilo de cada item da lista de golpes */
 .moves-info ul li {
-    margin-bottom: 6px;
+    margin-bottom: 8px;
     color: #555;
-    font-size: 0.95rem;
+    font-size: 1rem;
+    display: flex; /* Alinha ícone e texto */
+    align-items: center; /* Centraliza verticalmente */
+    
+    /* Configurações para a interatividade */
+    padding: 8px 12px;
+    border-radius: 8px;
+    background-color: #f9f9f9; /* Fundo cinza bem clarinho */
+    transition: all 0.2s ease; /* Suaviza a animação */
+    cursor: default; /* O mouse não vira mãozinha, pois não é link */
 }
 
-/* --- Responsividade (Celulares e Tablets) --- */
+/* Efeito INTERATIVO ao passar o mouse sobre um golpe */
+.moves-info ul li:hover {
+    background-color: #f0f0f0; /* Fundo fica um pouco mais escuro */
+    transform: translateX(5px); /* Move ligeiramente para a direita */
+}
+
+/* Estilo do ícone dentro da lista */
+.moves-info ul li i {
+    margin-right: 12px; /* Espaço entre ícone e texto */
+    width: 20px; /* Largura fixa para alinhar todos os textos */
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+/* --- Cores dos Tipos de Pokemon (para os ícones) --- */
+/* Usei cores aproximadas dos jogos */
+.type-grass { color: #78C850; }
+.type-fire { color: #F08030; }
+.type-water { color: #6890F0; }
+.type-normal { color: #A8A878; }
+.type-electric { color: #F8D030; }
+.type-ice { color: #98D8D8; }
+.type-fighting { color: #C22E28; }
+.type-poison { color: #A040A0; }
+.type-ground { color: #E0C068; }
+.type-flying { color: #A890F0; }
+.type-psychic { color: #F85888; }
+.type-bug { color: #A8B820; }
+.type-rock { color: #B8A038; }
+.type-ghost { color: #705898; }
+.type-dragon { color: #7038F8; }
+.type-steel { color: #B8B8D0; }
+.type-dark { color: #705848; }
+.type-fairy { color: #EE99AC; }
+
+/* --- Responsividade --- */
 @media (max-width: 850px) {
     .team-grid {
         grid-template-columns: repeat(2, 1fr); 
@@ -105,13 +151,26 @@ h1 {
     .team-grid {
         grid-template-columns: 1fr; 
     }
-    .container {
-        padding: 15px;
-    }
-    .full-card {
-        padding: 15px;
-    }
-    h1 {
-        font-size: 1.5rem;
-    }
+    .container { padding: 15px; }
+    .full-card { padding: 15px; }
+    h1 { font-size: 1.5rem; }
+}
+
+a {
+    display: inline-block; /* Importante para a margem funcionar direito */
+    margin-top: 20px;      /* Aumente esse valor (80px, 100px) até ficar onde você quer */
+    
+    /* Estilo visual para não ficar um link feio e azul */
+    color: #FFDE00; 
+    text-decoration: none;
+    background-color: #3B4CCA;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+a:hover {
+    background-color: #CC0000; /* Muda para vermelho Pokémon ao passar o mouse */
+    transform: scale(1.1);      /* Dá um leve zoom */
 }
