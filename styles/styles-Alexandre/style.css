@@ -1,0 +1,59 @@
+body {
+    /* Imagem de fundo ajustada */
+    background-image: url("/assets/A-serene-landscape-with-Pokemon-in-their-natural-habitat-perfect-as-a-HD-wallpaper.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    
+    /* Mágica do Alinhamento Central */
+    display: flex;
+    flex-direction: column; /* Coloca os itens um embaixo do outro */
+    align-items: center;    /* Centraliza na horizontal */
+    justify-content: center; /* Centraliza na vertical (se a tela for alta) */
+    min-height: 100vh;      /* Garante que o corpo tenha o tamanho da tela toda */
+    
+    font-family: 'Arial', sans-serif;
+    padding: 20px;
+}
+
+
+.container {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+.pokemon-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+.pokemon-card img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+}
+.moves-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    text-align: left;
+}
+.moves-card {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 8px;
+}
+.moves-card h3 {
+    margin-top: 0;
+}
+.moves-card ul {
+    padding-left: 20px;
+    margin-bottom: 0;
+}
+
+
