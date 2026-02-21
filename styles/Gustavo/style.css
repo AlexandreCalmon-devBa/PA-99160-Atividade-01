@@ -1,0 +1,118 @@
+body {
+    /* Imagem de fundo ajustada */
+    background-image: url("/assets/A-serene-landscape-with-Pokemon-in-their-natural-habitat-perfect-as-a-HD-wallpaper.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    
+    /* Alinhamento Central */
+    display: flex;
+    flex-direction: column; 
+    align-items: center;    
+    justify-content: flex-start;
+    min-height: 100vh;      
+    
+    font-family: 'Arial', sans-serif;
+    padding: 20px;
+    margin: 0;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    max-width: 1000px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.pokemon-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* O "Molde" do Card Unificado - Agora Flutuante */
+.pokemon-card {
+    background-color: rgba(240, 240, 240, 0.95);
+    padding: 20px;
+    border-radius: 12px;
+    border-bottom: 5px solid #d32f2f;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Suaviza a subida e a sombra */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Efeito de Flutuar */
+.pokemon-card:hover {
+    transform: translateY(-12px); /* O card sobe 12 pixels */
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3); /* Sombra aumenta para parecer que está longe do fundo */
+}
+
+/* Imagem em Quadradinho Flutuante */
+.pokemon-card img {
+    width: 100%;
+    max-width: 150px;
+    height: 150px;
+    object-fit: contain;
+    border: 3px solid #333;
+    border-radius: 8px; /* Cantos levemente arredondados para não ficar pontiagudo */
+    background-color: #fff;
+    margin-bottom: 15px;
+    padding: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.pokemon-card h3 {
+    margin: 10px 0;
+    color: #d32f2f;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    border-bottom: 2px solid #d32f2f;
+    width: 100%;
+    padding-bottom: 5px;
+}
+
+/* Estilização da lista de golpes */
+.moves-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.moves-list li {
+    padding: 8px 0;
+    font-weight: bold;
+    color: #444;
+    border-top: 1px solid #ddd;
+    font-size: 0.9em;
+}
+
+.moves-list li:first-child {
+    border-top: none;
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+    .pokemon-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .pokemon-grid {
+        grid-template-columns: 1fr;
+    }
+}
