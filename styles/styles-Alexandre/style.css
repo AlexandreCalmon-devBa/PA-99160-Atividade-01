@@ -1,59 +1,117 @@
+/* --- Configurações Gerais do Corpo --- */
 body {
-    /* Imagem de fundo ajustada */
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     background-image: url("/assets/A-serene-landscape-with-Pokemon-in-their-natural-habitat-perfect-as-a-HD-wallpaper.jpg");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    
-    /* Mágica do Alinhamento Central */
     display: flex;
-    flex-direction: column; /* Coloca os itens um embaixo do outro */
-    align-items: center;    /* Centraliza na horizontal */
-    justify-content: center; /* Centraliza na vertical (se a tela for alta) */
-    min-height: 100vh;      /* Garante que o corpo tenha o tamanho da tela toda */
-    
-    font-family: 'Arial', sans-serif;
-    padding: 20px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
 }
 
-
+/* --- Container Principal --- */
 .container {
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 20px;
-    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 30px;
+    border-radius: 15px;
     text-align: center;
+    width: 100%;
+    max-width: 1000px; 
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    backdrop-filter: blur(5px);
 }
-.pokemon-grid {
+
+h1 {
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* --- Grid Principal --- */
+.team-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-    margin-bottom: 20px;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 25px; 
+    align-items: start; 
 }
-.pokemon-card img {
-    width: 150px;
-    height: 150px;
-    object-fit: contain;
-    border: 2px solid #ccc;
-    border-radius: 8px;
+
+/* --- Cartão Completo (Imagem + Golpes) --- */
+.full-card {
     background-color: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.moves-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-    text-align: left;
+
+.full-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
 }
-.moves-card {
-    background-color: #f0f0f0;
-    padding: 10px;
-    border-radius: 8px;
+
+/* --- Estilo da Imagem --- */
+.card-image {
+    width: 140px;
+    height: 140px;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 4px rgba(0,0,0,0.1)); 
+    margin-bottom: 15px; 
 }
-.moves-card h3 {
+
+/* --- Área dos Golpes --- */
+.moves-info {
+    width: 100%; 
+    text-align: left; 
+    border-top: 2px solid #f0f0f0; 
+    padding-top: 15px;
+}
+
+.moves-info h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #d32f2f; 
+    font-size: 1.2rem;
+    text-align: center; 
+}
+
+.moves-info ul {
+    padding-left: 25px; 
+    margin-bottom: 0;
     margin-top: 0;
 }
-.moves-card ul {
-    padding-left: 20px;
-    margin-bottom: 0;
+
+.moves-info ul li {
+    margin-bottom: 6px;
+    color: #555;
+    font-size: 0.95rem;
 }
 
+/* --- Responsividade (Celulares e Tablets) --- */
+@media (max-width: 850px) {
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
 
+@media (max-width: 550px) {
+    .team-grid {
+        grid-template-columns: 1fr; 
+    }
+    .container {
+        padding: 15px;
+    }
+    .full-card {
+        padding: 15px;
+    }
+    h1 {
+        font-size: 1.5rem;
+    }
+}
